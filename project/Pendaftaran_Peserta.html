@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Peserta</title>
+    <style>
+        /* Reset dasar dan pengaturan font */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f6ff;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        /* Judul Utama */
+        h1 {
+            color: #1a4b8c; 
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        /* Kotak Formulir */
+        .form-box {
+            background-color: #ffffff;
+            border: 1px solid #c0c0c0;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 120px;
+            color: #333;
+            font-size: 15px;
+        }
+
+        /* Input Text */
+        .form-group input[type="text"] {
+            width: 250px;
+            padding: 6px 10px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        /* Radio Button */
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .radio-group label {
+            width: auto;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .radio-group input[type="radio"] {
+            cursor: pointer;
+        }
+
+        /* Dropdown Select */
+        .form-group select {
+            padding: 6px 10px;
+            border: 1px solid #999;
+            border-radius: 3px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        /* Tombol Kirim */
+        .btn-kirim {
+            background-color: #1a4b8c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .btn-kirim:hover {
+            background-color: #13386b;
+        }
+
+        /* Tabel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #1a4b8c; /* Warna biru tua */
+            color: white;
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Warna selang-seling pada baris tabel */
+        tbody tr:nth-child(even) {
+            background-color: #eaf3ff;
+        }
+        
+        tbody tr:hover {
+            background-color: #dfebf7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pendaftaran Peserta</h1>
+
+        <!-- Bagian Formulir -->
+        <div class="form-box">
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" value="Budi Santoso">
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <input type="radio" id="laki-laki" name="jenis_kelamin" checked>
+                    <label for="laki-laki">L</label>
+                    
+                    <input type="radio" id="perempuan" name="jenis_kelamin">
+                    <label for="perempuan">P</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+                <select id="jurusan">
+                    <option value="Informatika" selected>Informatika</option>
+                    <option value="Sistem Informasi">Sistem Informasi</option>
+                    <option value="Teknik Komputer">Teknik Komputer</option>
+                </select>
+            </div>
+
+            <button class="btn-kirim">Kirim</button>
+        </div>
+
+        <!-- Bagian Tabel -->
+        <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Jurusan</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Budi Santoso</td>
+                    <td>Informatika</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Sari Wulandari</td>
+                    <td>Sistem Informasi</td>
+                </tr>
+        </table>
+    </div>
+
+</body>
+</html>
+   
