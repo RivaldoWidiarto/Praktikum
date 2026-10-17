@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Data Mahasiswa</title>
+        <style>
+            /* Pengaturan font */
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+            }
+            body {
+                background-color: #a8c8aa;
+                padding: 40px 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .container {
+                 width: 100%;
+                max-width: 700px;
+            }
+            /* Judul */
+            h1 {
+                color: #fffdfd; 
+                text-align: center;
+                margin-bottom: 25px;
+                font-size: 24px;
+            }
+            /* Kotak form */
+            .form-box {
+                background-color: #ffffff;
+                border: 1px solid #c0c0c0;
+                border-radius: 4px;
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .form-group {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+             }
+
+             .form-group label {
+                width: 120px;
+                color: #333;
+                font-size: 15px;
+            }
+            /* Input text */
+            .form-group input[type="text"] {
+                width: 250px;
+                padding: 6px 10px;
+                border: 1px solid #999;
+                border-radius: 3px;
+                font-size: 14px;
+            }
+            /* Input email */
+            .form-group input[type="email"] {
+                width: 250px;
+                padding: 6px 10px;
+                border: 1px solid #999;
+                border-radius: 3px;
+                font-size: 14px;
+            }
+            /* tombol radio */
+            .radio-group {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+        
+            .radio-group label {
+                width: auto;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+
+            .radio-group input[type="radio"] {
+                cursor: pointer;
+            }
+            /* Dropdown select */
+            .form-group select {
+                padding: 6px 10px;
+                border: 1px solid #999;
+                border-radius: 3px;
+                font-size: 14px;
+                background-color: white;
+                cursor: pointer;
+            }
+            /* Text area */
+             textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                font-family: inherit;
+                font-size: 14px;
+                background-color: #fafafa;
+                resize: vertical;
+                box-sizing: border-box;
+                transition: all 0.3s ease;
+            }
+             textarea::placeholder {
+                color: #999;
+                font-style: italic;
+            }
+            /* Tombol kirim */
+            .btn-kirim {
+                background-color: #519652;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 14px;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-top: 5px;
+            }
+
+            .btn-kirim:hover {
+                background-color: #3f8e3f;
+            }
+            /* Tabel */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #ffffff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+
+            th {
+                background-color: #10a335; /* Warna biru tua */
+                color: white;
+                text-align: left;
+                padding: 12px 15px;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            td {
+                padding: 12px 15px;
+                border-bottom: 1px solid #e0e0e0;
+                color: #333;
+                font-size: 14px;
+            }
+            tbody tr:nth-child(even) {
+                background-color: #eafff2;
+            }
+        
+            tbody tr:hover {
+                background-color: #dff7e3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Data Mahasiswa</h1>
+            <!---Formulir input data mahasiswa-->
+            <div class="form-box">
+                <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email">
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <input type="radio" id="laki-laki" name="jenis_kelamin" checked>
+                    <label for="laki-laki">L</label>
+                    
+                    <input type="radio" id="perempuan" name="jenis_kelamin">
+                    <label for="perempuan">P</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+                <select id="jurusan">
+                    <option value="Manajemen" selected>Manajemen</option>
+                    <option value="Kedokteran">Kedokteran</option>
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Peternakan">Peternakan</option>
+                </select>
+            </div>
+             <div class="form-group">
+                <label for="alamat">Alamat Lengkap:</label>
+                <textarea id="alamat" rows="3" placeholder="Tulis alamat lengkap Anda di sini..."></textarea>
+            </div>
+            <button class="btn-kirim">Kirim</button>
+            </div>
+            <!---Tabel data mahasiswa-->
+            <table>
+                <tr>
+                    <th colspan="4";style= "text-align: center;">Tabel Data Mahasiswa</th>
+                </tr>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Prodi</th>
+                    <th>IPK</th>
+                </tr>
+                <tr>
+                    <td>123456789</td>
+                    <td>Ahmad Fauzi</td>
+                    <td>Teknik Informatika</td>
+                    <td>3.75</td>
+                </tr>
+                <tr>
+                    <td>987654321</td>
+                    <td>Siti Aisyah</td>
+                    <td>Kedokteran</td>
+                    <td>3.90</td>
+                </tr>
+                <tr>
+                    <td>456789123</td>
+                    <td>Budi Santoso</td>
+                    <td>Manajemen</td>
+                    <td>3.60</td>
+                </tr>
+                <tr>
+                    <td>789123456</td>
+                    <td>Rina Wulandari</td>
+                    <td>Peternakan</td>
+                    <td>3.80</td>
+                </tr>
+                <tr>
+                    <td>321654987</td>
+                    <td>Agus Prasetyo</td>
+                    <td>Teknik Informatika</td>
+                    <td>3.70</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
